@@ -30,10 +30,6 @@ function ColorBox(sources: Sources): Sinks {
   let greenSlider = GreenSlider({DOM: sources.DOM, props$: greenProps$});
   let blueSlider = BlueSlider({DOM: sources.DOM, props$: blueProps$});
 
-  const numToHex = (num) => {
-    let hex = num.toString(16);
-  }
-
   let colorBox$ = xs.combine(redSlider.value$, greenSlider.value$, blueSlider.value$)
     .map((colors) => {
       return colors
