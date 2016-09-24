@@ -17,7 +17,7 @@ function ColorBox(sources: Sources): Sinks {
   let BlueSlider = isolate(ColorSlider);
 
   let redProps$ = xs.of<ColorSliderProps>({
-    color: 'Red', min: 0, max: 255, initial: 0
+    color: 'Red', min: 0, max: 255, initial: 255
   }).remember();
   let greenProps$ = xs.of<ColorSliderProps>({
     color: 'Green', min: 0, max: 255, initial: 0
@@ -45,12 +45,23 @@ function ColorBox(sources: Sources): Sinks {
 
   return {
     DOM: xs.combine(colorBox$, redSlider.DOM, greenSlider.DOM, blueSlider.DOM)
-      .map(([colorBox, redVTree, greenVTree, blueVTree]) => 
+      .map(([color, redVTree, greenVTree, blueVTree]) => 
         div([
           redVTree,
           greenVTree,
           blueVTree,
-          h2('Color Hex is ' + colorBox)
+          h2('Color Hex is ' + color),
+          div(
+            {
+              style: {
+                background: color,
+                height: "150px",
+                width: "150px",
+                textAlign: "center"
+              }
+            },
+            [color]
+          )
         ])  
       )
   };
