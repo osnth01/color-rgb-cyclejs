@@ -5,8 +5,8 @@ import {DOMSource} from '@cycle/dom/xstream-typings';
 export interface ColorSliderProps {
   color: string;
   min: number;
+  max: number;
   initial: number;
-  max: number; 
 }
 
 export type Sources = {
