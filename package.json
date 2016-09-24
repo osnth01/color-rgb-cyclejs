@@ -1,0 +1,33 @@
+{
+  "name": "color-rgb-cyclejs",
+  "version": "1.0.0",
+  "description": "A project to learn Cycle.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osnth01/color-rgb-cyclejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osnth01/color-rgb-cyclejs/issues"
+  },
+  "homepage": "https://github.com/osnth01/color-rgb-cyclejs#readme",
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "@cycle/dom": "^12.2.5",
+    "@cycle/xstream-run": "^3.1.0",
+    "xstream": "^6.3.2"
+  }
+}
